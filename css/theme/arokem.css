@@ -269,10 +269,3 @@ body {
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
-
-  body:after {
-    content: url(../../img/escience-network.png);
-    position: fixed;
-    bottom: -10em;
-    right: -20em;
-    opacity: 0.5;}
