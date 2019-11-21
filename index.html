@@ -53,8 +53,10 @@
 	<section>
 		<em>
 		<h2> A data science toolbox for analysis of Human Connectome Project diffusion MRI</h2>
-		</em>
-		<br>November 25th, 2019
+        </em>
+        Grant <a href="https://projectreporter.nih.gov/project_info_details.cfm?aid=9886761&icde=46874320&ddparam=&ddvalue=&ddsub=&cr=2&csb=default&cs=ASC&pball="> RF1MH121868-01 </a> <br>In response to BRAIN Initiative <a href="https://grants.nih.gov/grants/guide/rfa-files/RFA-MH-19-147.html"> RFA-MH-19-147</a>: <br> Integration and Analysis of BRAIN Initiative Data
+        <br>
+        <br>November 25th, 2019
 		<br>
 		<p><a href="http://arokem.org">Ariel Rokem</a>,
 		<a href="http://escience.washington.edu">University of Washington eScience Institute</a> </p>
@@ -66,28 +68,24 @@
 		<img src="img/cc-by.png" height="30px" alt="License" align="middle">
     </section>
 
-
-    <!-- <section>
-        <img src="img/eScience-infographic.png">
-    </section> -->
-
     <section>
         <div style="position: absolute; left:0px; top:-40px;">
+            <img src="img/noah.jpg", height="160">
+                <br>
+                <small>Noah Simon <br> (UW Biostats)</small>
+            </div>
+
+        <div style="position: absolute; left:140px; top:-40px;">
         <img src="img/adam.jpeg" height="160">
             <br>
             <small>Adam Richie-Halford <br> (UW Physics)</small>
         </div >
-        <div style="position: absolute; left:200px; top:-40px;">
+        <div style="position: absolute; left:320px; top:-40px;">
             <img src="img/jk.png" height="160">
                 <br>
                 <small>John Kruper <br> (UW CSE)</small>
         </div >
 
-        <div style="position: absolute; left:400px; top:-40px;">
-        <img src="img/noah.jpg", height="160">
-            <br>
-            <small>Noah Simon <br> (UW Biostats)</small>
-        </div>
 
         <div style="position: absolute; left:0px; top:200px;">
         <img src="img/jason.jpg" height="160">
@@ -100,9 +98,6 @@
                 <br>
                 <small>Mareike Grotheer <br> (Stanford Psychology)</small>
         </div >
-
-
-
     </section>
 
     <section>
@@ -117,7 +112,7 @@
         <h2>Not just static cables!</h2>
 		<p class="fragment">Brain connections develop and mature with age</p>
         <p class="fragment">Adapt and change with learning</p>
-		<p class="fragment">Individual differences account for differences in behaviour</p>
+		<p class="fragment">Individual differences account for differences in cognitive abilities and behaviour</p>
 
         <div class="cite" style="position: absolute; left:600px;">
             Reviewed in <a href="http://jov.arvojournals.org/article.aspx?articleid=2603187"> Rokem et al. (2017), Journal of Vision</a>
@@ -125,25 +120,21 @@
     </section>
 
     <section>
-        <h3>The Human Connectome Project</h3>
-        <img class="logo" src="img/hcp-logo.jpg" width="200" align="middle" alt="Human Connectome Project logo" border="0">
+        <img class="logo" src="img/hcp-logo.jpg" width="600" align="middle" alt="Human Connectome Project logo" border="0">
+        <p class="fragment">1,200 subjects</p>
+        <p class="fragment">High quality measurements of human brain connectivity with MRI</p>
+        <p class="fragment">Diffusion MRI measurements at high spatial resolution and multiple directions/weightings</p>
+        <p class="fragment">Large battery of behavioral assessments</p>
+        <div class="cite">
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S1053811912001954">Van Essen et al. (2012)</a><br>
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S1053811913005351">Van Essen et al. (2013)</a><br>
+            <a href="https://www.nature.com/articles/nn.4361">Glasser et al. (2016)</a><br>
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S1053811913005272">Barch et al. (2013)</a>
+    </div>
 
     </section>
 
-
-    <section>
-		<h2>Opportunities</h2>
-        <p class="fragment">New data sets will enable important new discoveries</p>
-		<p class="fragment"><em>Data-driven discovery</em></p>
-    </section>
-
-	<section>
-        <h3>Using machine learning to understand brain function</h3>
-        <p class="fragment">Accurately predict individual variability</p>
-        <p class="fragment">Expose important biological features</p>
-    </section>
-
-	<section>
+	<!-- <section>
         <h4>Diffusion MRI measures the physical properties of brain connections </h4>
         <div class="fragment" style="position: absolute; left: 100px;">
 			<img src="./img/optic-radiation-postmortem.png" height="505" >
@@ -230,7 +221,7 @@
                 <br>
                 <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0123272">Rokem et al. (2015), PLoS One</a>
             </div>
-        </section>
+        </section> -->
 
 
 	<section>
@@ -258,7 +249,7 @@
 
 
 	<section>
-		<h4>Diffusion statistics</h4>
+		<h4>Diffusion MRI measures brain tissue properties</h4>
 		<div class="fragment" style="position: absolute; left: 14px;">
 			<img src="img/tensor-stats1.png" height="400"  >
 			<div style="position: absolute; left: 75px; top: 420px;">
@@ -300,13 +291,91 @@
             </div>
     </section>
 
+    <!--
     <section>
+        <h3>Computational tract tracing</h3>
+        <div style="position: absolute; left: 210px;">
+        <img src="img/axial_slice.png" height="505">
+        </div>
+
+        <div class = "fragment fade-in" style="position: absolute;">
+
+        <canvas id="zoom-box" width="1000" height="1000"></canvas>
+            <script>
+                var canvas = document.getElementById('zoom-box');
+                var context = canvas.getContext('2d');
+                context.beginPath(430, 200);
+                context.moveTo(430, 200);
+                context.lineTo(430, 250);
+                context.lineTo(480, 250);
+                context.lineTo(480, 200);
+                context.lineTo(430, 200);
+                context.lineWidth = 2;
+                // line color
+                context.strokeStyle = 'white';
+                context.stroke();
+            </script>
+            </div>
+    </section>
+
+    <section>
+        <h3>From diffusion to tracks</h3>
+        <div style="position: absolute;">
+        <img src="img/d2t-bkgrnd.png" style="background:none; border:none; box-shadow:none;" height="505", width="766">
+    </div>
+        <div class="fragment" style="position: absolute; left: 92px; top:48px;"><img src="img/tensor_ellipsoids.png" style="background:none; border:none; box-shadow:none; opacity:0.4; filter:alpha(opacity=40);">
+        </div>
+        <div class = "fragment fade-in" style="position: absolute;">
+        <canvas id="fiber" width="1000" height="1000"></canvas>
+            <script>
+                var canvas = document.getElementById('fiber');
+                var context = canvas.getContext('2d');
+                context.beginPath();
+                context.moveTo(590, 170);
+                context.bezierCurveTo(400, 300, 365, 80, 378, 65);
+                context.lineWidth = 10;
+                // line color
+                context.strokeStyle = 'yellow';
+                context.stroke();
+            </script>
+            </div>
+    </section>
+
+    <section>
+        <h3>From diffusion to tracks</h3>
+        <video width="600" autoplay loop>
+            <source src="./img/cc_tube_movie-373.mov">
+        </video>
+    </section>
+
+    <section>
+        <h4>Major white matter tracts</h4>
+        <img src="./img/white-matter-connections.gif">
+        <div class="cite" style="position: absolute; left:400px;">
+            Image from <a href="https://www.nature.com/articles/s41467-018-03297-7">Yeatman, Richie-Halford, Smith, Keshavan, Rokem (2018)</a>
+        </div>
+    </section>
+    -->
+
+    <section>
+            <h2>Specific Aims</h2>
+            <p class="fragment">Aim 1: Tractometry -- incorporating individual anatomy into dMRI analysis</p>
+            <p class="fragment">Aim 2: Statistical analysis framework for diffusion MRI data</p>
+            <p class="fragment">Aim 3:  Infrastructure for data exploration and integration</p>
+            <p class="fragment"><strong><em>A comprehensive data science toolbox for end-to-end analysis of dMRI data</em></strong></p>
+            <p class="fragment">Applicable to other large datasets: HCP follow-ups, ABCD, PING, HBN, </p>
+    </section>
+
+
+    <section>
+        <h2>Aim 1: Tractometry</h2>
         <h3>The 3D structure of each brain is unique</h3>
         <p>Tracts provide the anatomically correct coordinate frame </p>
         <img align="center" src="img/pyafq_segmentation1.gif" height="400">
     </section>
 
 	<section>
+        <h2>Aim 1: Tractometry</h2>
         <h3>The 3D structure of each brain is unique</h3>
         <p><em>Tractometry</em> is <em>feature engineering</em></p>
         <img align="center" src="img/pyafq_segmentation2.gif" height="400">
@@ -330,41 +399,56 @@
     </section>
 
     <section>
+        <h2>Aim 1: Tractometry</h2>
+        <p class="fragment">Aim 1.1: Tract segmentation</p>
+        <p class="fragment">Aim 1.2: Advanced diffusion modeling</p>
+        <p class="fragment">Aim 1.3: Use cloud computing to scale computations</p>
+    </section>
+
+    <section>
+        <img src="img/aws-logo.png">
+        <img class="fragment" src="img/pangeo_simple_logo.svg" height=100>
+        <img class="fragment" src="img/pangeo_architecture.png">
+
+    </section>
+
+    <section>
+        <h2>Aim 2: Statistical analysis of tractometry results</h2>
         <h3>The dilemma of standard statistical analysis</h3>
         <p class="fragment">Mass univariate analysis: reduced statistical power</p>
         <p class="fragment">Focus on a region of interest: lose the full picture</p>
     </section>
 
 
-        <section>
-            <h2>Solving diffusion MRI as a general linear model</h2>
-            <img src="img/dMRI_group_structure.png" height="500px">
-        </section>
+    <section>
+        <h2>Solving diffusion MRI as a general linear model</h2>
+        <img src="img/dMRI_group_structure.png" height="500px">
+    </section>
 
 
-        <section>
-            <h2>Solving diffusion MRI as a general linear model</h2>
-            <img src="img/regression_equation.png" width=600><br>
-            <p class="fragment">The objective:</p>
-            <img class="fragment" src="img/ols_penalty.png" width="200px">
+    <section>
+        <h2>Solving diffusion MRI as a general linear model</h2>
+        <img src="img/regression_equation.png" width=600><br>
+        <p class="fragment">The objective:</p>
+        <img class="fragment" src="img/ols_penalty.png" width="200px">
 
-            <p class="fragment">But in our case p (number of variables) >> n (number of subjects) </p>
+        <p class="fragment">But in our case p (number of variables) >> n (number of subjects) </p>
 
-            <p class="fragment">Regularization: the Lasso</p>
-            <div class="fragment">
-            <img src="img/lasso_penalty.png" width="400px">
-            <div class="cite">
-                <a href="http://statweb.stanford.edu/~tibs/lasso/lasso.pdf">Tibshirani (1996)</a>
-            </div>
-            </div>
-        </section>
+        <p class="fragment">Regularization: the Lasso</p>
+        <div class="fragment">
+        <img src="img/lasso_penalty.png" width="400px">
+        <div class="cite">
+            <a href="http://statweb.stanford.edu/~tibs/lasso/lasso.pdf">Tibshirani (1996)</a>
+        </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>Diffusion MRI data has group structure</h2>
-            <img src="img/dMRI_group_structure.png" height="500px">
-        </section>
+    <section>
+        <h2>Diffusion MRI data has group structure</h2>
+        <img src="img/dMRI_group_structure.png" height="500px">
+    </section>
 
-        <section>
+    <section>
         <h2>The Group Lasso</h2>
         <img src="img/group_lasso_penalty.png" width="600px">
         <p>Where <em>l</em> are groups of variables </p>
@@ -375,65 +459,72 @@
         <div class="cite">
             <a href="http://www.columbia.edu/~my2550/papers/glasso.final.pdf">Yuan and Lin (2006)</a>
         </div>
-        </section>
+    </section>
 
-        <section>
-            <h2>Sparse Group Lasso</h2>
-            <img src="img/sparse_group_lasso_penalty.png" width="600px">
-            <p>Enforces sparsity both at the group level and the within-group level</p>
-            <p class="fragment">Subsumes the Lasso (&lambda;<sub>1</sub> = 0)</p>
-            <p class="fragment">And the Group Lasso (&lambda;<sub>2</sub> = 0)</p>
-            <p class="fragment">But more meta-parameters</p>
-            <p class="fragment"> &rarr; Nested cross validation + hyperoptimization</p>
-            <div class="cite">
-                <a href="https://www.tandfonline.com/doi/abs/10.1080/10618600.2012.681250">Simon et al. (2013)</a>
-            </div>
-        </section>
-
-        <section>
-            <h2>Brain age </h2>
-            <img src="img/age_regression.png" height="500px">
-            <br>
-            MAE: 3.6 years (+/- 2.7 years), R^2=0.3
-        </section>
-
-        <section>
-            <h2>Multiple biological processes</h2>
-            <div style="position: absolute; top:2em; left:6em;">
-            <img src="img/age_coefficients.gif" height="600px">
-            </div>
-        </section>
-
-
-        <section>
-            <h2>Classification: logistic regression</h2>
-            <img src="img/logistic_regression.png" width="600px">
-        </section>
-
-
-        <section>
-            <h2> Accurately classifies patients/controls</h2>
-            <img src="img/als_classification_results.png" height="450px">
-            <p>Classification accuracy of 93% (+/- 2%) <br> AUC of 0.978 (+/- 0.006)</p>
-        </section>
-
-        <section>
-            <h2> Biological cause of ALS is localized</h2>
-            <div style="position: absolute; top:2em; left:6em;">
-            <img src="img/als_coefficients.gif" height="600px">
-            </div>
-
-        </section>
-
-        <section>
+    <section>
         <h2>Sparse Group Lasso</h2>
-            <p class="fragment">Capitalizes on brain structure</p>
-            <p class="fragment">Predicts continuous measures <br> (e.g, "brain age", reading skills)</p>
-            <p class="fragment">Classifies of different states (patient/control)</p>
-            <p class="fragment">Identifies dense or sparse biological feature sets</p>
-        </section>
+        <img src="img/sparse_group_lasso_penalty.png" width="600px">
+        <p>Enforces sparsity both at the group level and the within-group level</p>
+        <p class="fragment">Subsumes the Lasso (&lambda;<sub>1</sub> = 0)</p>
+        <p class="fragment">And the Group Lasso (&lambda;<sub>2</sub> = 0)</p>
+        <p class="fragment">But more meta-parameters</p>
+        <p class="fragment"> &rarr; Nested cross validation + hyperoptimization</p>
+        <div class="cite">
+            <a href="https://www.tandfonline.com/doi/abs/10.1080/10618600.2012.681250">Simon et al. (2013)</a>
+        </div>
+    </section>
 
-    <!-- <section>
+    <section>
+        <h2>Brain age </h2>
+        <img src="img/age_regression.png" height="500px">
+        <br>
+        MAE: 3.6 years (+/- 2.7 years), R^2=0.3
+    </section>
+
+    <section>
+        <h2>Multiple biological processes</h2>
+        <div style="position: absolute; top:2em; left:6em;">
+        <img src="img/age_coefficients.gif" height="600px">
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Classification: logistic regression</h2>
+        <img src="img/logistic_regression.png" width="600px">
+    </section>
+
+
+    <section>
+        <h2> Accurately classifies patients/controls</h2>
+        <img src="img/als_classification_results.png" height="450px">
+        <p>Classification accuracy of 93% (+/- 2%) <br> AUC of 0.978 (+/- 0.006)</p>
+    </section>
+
+    <section>
+        <h2> Biological cause of ALS is localized</h2>
+        <div style="position: absolute; top:2em; left:6em;">
+        <img src="img/als_coefficients.gif" height="600px">
+        </div>
+
+    </section>
+
+    <section>
+    <h2>Sparse Group Lasso</h2>
+        <p class="fragment">Capitalizes on brain structure</p>
+        <p class="fragment">Predicts continuous measures <br> (e.g, "brain age", reading skills)</p>
+        <p class="fragment">Classifies of different states (patient/control)</p>
+        <p class="fragment">Identifies dense or sparse biological feature sets</p>
+    </section>
+
+    <section>
+            <h2>Aim 1: Statistical analysis</h2>
+            <p class="fragment">Aim 2.1: software for regularized regression in tractometry data</p>
+            <p class="fragment">Aim 2.2: Fitting the SGL model to HCP behavioral data</p>
+    </section>
+
+    <section>
+        <h2>Aim 3: Infrastructure for data exploration and integration</h2>
 		<h3>Challenge: how do we incentivize data sharing?</h3>
 		<p class="fragment">Data sharing is not incentivized and is not easy enough</p>
         <p class="fragment">Results from large multi-dimensional datasets are hard to understand</p>
@@ -448,22 +539,22 @@
 		<div style="position: absolute; left:70px; top:140px;">
 			<img src="img/jason.jpg" height="200">
 			<br>
-            <small>Jason Yeatman <br> (UW ILABS)</small>
+            <small>Jason Yeatman </small>
 		</div>
 		<div style="position: absolute; left:280px; top:140px;">
 			<img src="img/adam.jpeg" height="200">
 			<br>
-			<small>Adam Richie-Halford <br> (UW eScience)</small>
+			<small>Adam Richie-Halford </small>
 		</div >
 		<div style="position: absolute; left:490px; top:140px;">
 			<img src="img/josh.png", height="200">
 			<br>
-			<small>Josh Smith <br> (UW eScience) </small>
+			<small>Josh Smith </small>
 		</div>
 		<div style="position: absolute; left:705px; top:140px;">
 			<img src="img/anisha.jpg", height="200">
 			<br>
-            <small>Anisha Keshavan <br> (UW eScience &rarr; <br> Child Mind Institute)</small>
+            <small>Anisha Keshavan</small>
 		</div>
 		<div class="cite" style="position: absolute; left:380px">
                 <a href="https://www.nature.com/articles/s41467-018-03297-7">Yeatman, Richie-Halford, Smith, Keshavan & Rokem (2018), Nature Communications</a>
@@ -542,153 +633,12 @@
 
 	</section>
 
-	<section>
-		<h2>Data sharing facilitates  interdisciplinary collaboration</h2>
-        <p class="fragment">Dimensionality reduced data in tidy table format</p>
-        <p class="fragment">Facilitates interdisciplinary collaboration</p>
-		<div class="cite" style="position: absolute; left:380px">
-            <a href="https://www.nature.com/articles/s41467-018-03297-7">Yeatman, Richie-Halford,  Smith, Keshavan & Rokem (2018), Nature Communications</a>
-        </div>
-	</section>
 
     <section>
-        <h3>A data science toolbox to study brain connections</h3>
-        <p class="fragment">Image processing at scale</p>
-        <p class="fragment">Machine learning</p>
-        <p class="fragment">Exploration, visualization and data sharing</p>
-    </section>
-
-
-    <section>
-        <h3 class="fragment">Challenge: how do we make it reproducible?</h3>
-        <h3 class="fragment">How do we make it extensible?</h3>
-        <h4 class="fragment">Open source software is a necessary complement to brain observatories</h4>
-    </section>
-
-    <section>
-        <h2>Open-source software and reproducibility</h2>
-        <img src="img/nas_cover.png" height=350><br>
-        <img src="img/nas.png" height=120 align="center">
-    </section>
-
-    <section>
-            <h3>Challenge: how do we make it reproducible?</h3>
-            <h3>How do we make it extensible?</h3>
-            <h4>Open source software is a necessary complement to brain observatories</h4>
-            <h3 class="fragment">How do we make it sustainable?</h3>
-    </section>
-
-	<section>
-		<h2>How can we get more people involved?</h2>
-	    <p class="fragment">Methods in data science are rapidly changing</p>
-        <p class="fragment">Learning often requires substantial hands-on experience</p>
-
-        <div class="row">
-            <div class="imgcite two-col fragment">
-                <img src="img/carpentries-logo.png">
-                <img class="fragment" src="img/swc-logo.png" height="133px" width="200px">
-                <img class="fragment" src="img/dc-logo.png" height="133px" width="200px">
-            </div>
-        <div class="imgcite two-col fragment">
-            <p>Science hackathons</p>
-            <p><a href="http://brainhack.org">http://brainhack.org</a></p>
-            <div class="cite" style="position: absolute; left:600px">
-                    <a href="https://gigascience.biomedcentral.com/articles/10.1186/s13742-016-0121-x"> Craddock et al. (2016) Gigascience</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2>Hack weeks</h2>
-        <p class="fragment">Week-long events</p>
-        <p class="fragment">Combination of learning and project work</p>
-        <div class="fragment">
-        <p>A fine balance of pedagogy and hacking</a></p>
-        <img src="img/HackSpectrum.png" height="300">
-        </div>
-        <div class="cite" style="position: absolute; left:450px">
-                <a href="https://www.pnas.org/content/115/36/8872"> Huppenkothen, Arendt, Hogg, Ram, Vanderplas & Rokem (2018) PNAS</a>
-        </div>
-    </section>
-
-	<section>
-        <img src="img/neurohack-collage.png" height="400">
-        <div class="fragment">
-        <a href="http://neurohackademy.org/">NeuroHackademy: A Summer Institute in Neuroscience and Data Science</a>
-        <img src="img/nimh-logo.gif" height="50px">
-        </div>
-        <div class="cite" style="position: absolute; left:450px">
-                <a href="https://www.pnas.org/content/115/36/8872"> Huppenkothen, Arendt, Hogg, Ram, Vanderplas & Rokem (2018) PNAS</a>
-        </div>
-
-    </section>
-
-    <section>
-        <h2>Challenges</h2>
-        <div class="row">
-                <div class="imgcite two-col">
-                    <h3>Scale</h3>
-                    <p>How do we adapt research to big datasets?</p>
-                    <p>Use deep learning and citizen science</p>
-                </div>
-                <div class="imgcite two-col">
-                    <h3>Complexity</h3>
-                    <p>How do we analyze and interpret multi-dimensional data?</p>
-                    <p>Leverage machine learning techniques that use known brain structure</p>
-                </div>
-                <div class="imgcite two-col">
-                    <h3 >Socio-technical</h3>
-                    <p>How do we collaborate, publish and teach?</p>
-                    <p>Open science: sharing data, software and training</p>
-                </div>
-        </div>
-    </section> -->
-
-    <section>
-        <div style="position: absolute; left:50px; top:80px;">
-        <img src="img/adam.jpeg" height="200">
-            <br>
-            <small>Adam Richie-Halford <br> (UW Physics)</small>
-        </div >
-        <div style="position: absolute; left:260px; top:80px;">
-            <img src="img/jk.png" height="200">
-                <br>
-                <small>John Kruper <br> (UW CSE)</small>
-            </div >
-
-        <div style="position: absolute; left:470px; top:80px;">
-        <img src="img/noah.jpg", height="200">
-            <br>
-            <small>Noah Simon <br> (UW Biostats)</small>
-        </div>
-        <div style="position: absolute; left:640px; top:80px;">
-        <img src="img/jason.jpg" height="200">
-        <br>
-        <small>Jason Yeatman <br> (Stanford GSE/Pediatrics)</small>
-        </div>
-        <div style="position: absolute; left:370px; top:500px;">
-            <img src="img/nimh-logo.gif">
-        </div>
-    </section>
-
-    <section>
-        <h3>A data science toolbox for studying human connectomes</h3>
-        <p>Statistical methods</p>
-        <p class="fragment">Open-source software</p>
-    </section>
-
-    <section>
-        <h2>Open-source software and reproducibility</h2>
-        <img src="img/nas_cover.png" height=350><br>
-        <img src="img/nas.png" height=120 align="center">
-    </section>
-
-    <section>
-        <h3>A data science toolbox for studying human connectomes</h3>
-        <p>Statistical methods</p>
-        <p>Open-source software</p>
-        <p class="fragment"><a href="https://nrdg.github.io/afq-docs/">https://nrdg.github.io/afq-docs/</a></p>
+            <h2>Aim 3: Exploratory data analysis of the HCP dMRI benchmark and atlas</h2>
+            <p class="fragment">Aim 3.1: Views of statistical modeling results </p>
+            <p class="fragment">Aim 3.2 Creating a library of user-contributed views</p>
+            <p class="fragment">Aim 3.3 Merging with other datasets</p>
     </section>
 
     <section>
@@ -718,47 +668,19 @@
             Well-documented
             <br>
             <a href="dipy.org">http://dipy.org</a>
-            <div class="cite" style="position: absolute; left:0px">
+            <div class="cite" style="position: absolute; top:620px; left:0px">
                     <a href="https://www.frontiersin.org/articles/10.3389/fninf.2014.00008/full">Garyfallidis, Brett, Amirbekian, Rokem, van der Walt, Descoteaux, Nimmo Smith, and DIPY contributors (2014) Frontiers in Neuroinformatics</a>
             </div>
         </div>
     </div>
+    <div style="position: absolute; left:-10px">
+    <p class="fragment">Funded through CRCNS/NIBIB: <a href="https://projectreporter.nih.gov/project_info_details.cfm?aid=9751295&icde=46874372&ddparam=&ddvalue=&ddsub=&cr=1&csb=default&cs=ASC&pball=">5R01EB027585-02</a> (PI: Eleftherios Garyfallidis)</p>
+    </div>
     </section>
 
     <section>
-        <h2>Open to users</h2>
-        <img src="img/dipy-conda-downloads.png">
-        <div class="cite" style="position: absolute; left:0px">
-            <a href="https://www.frontiersin.org/articles/10.3389/fninf.2014.00008/full">Garyfallidis, Brett, Amirbekian, Rokem, van der Walt, Descoteaux, Nimmo Smith, and DIPY contributors (2014) Frontiers in Neuroinformatics</a>
-        </div>
-    </section>
-
-    <section>
-            <h2>Open to contributors</h2>
-            <img src="img/dipy_contributors.png">
-            <div class="cite" style="position: absolute; left:0px">
-            <a href="https://www.frontiersin.org/articles/10.3389/fninf.2014.00008/full">Garyfallidis, Brett, Amirbekian, Rokem, van der Walt, Descoteaux, Nimmo Smith, and DIPY contributors (2014) Frontiers in Neuroinformatics</a>
-            </div>
-    </section>
-
-    <section>
-        <h2>Distributed collaboration</h2>
-        <img src="img/dipy_global.png">
-        <div class="cite" style="position: absolute; left:0px">
-        <a href="https://www.frontiersin.org/articles/10.3389/fninf.2014.00008/full">Garyfallidis, Brett, Amirbekian, Rokem, van der Walt, Descoteaux, Nimmo Smith, and DIPY contributors (2014) Frontiers in Neuroinformatics</a>
-        </div>
-    </section>
-
-    <section>
-        <h3>A data science toolbox for studying human connectomes</h3>
-        <p>Statistical methods</p>
-        <p>Open-source software</p>
-        <p class="fragment">Computational infrastructure</p>
-    </section>
-
-    <section>
-        <img src="img/pangeo_simple_logo.svg" height=100>
-        <img src="img/pangeo_architecture.png">
+        <h2>Open-source science</h2>
+        <h3><a href="https://autofq.org">https://autofq.org</a></h3>
     </section>
 
 
