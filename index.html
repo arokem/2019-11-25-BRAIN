@@ -366,6 +366,35 @@
 
 
     <section>
+            <div class="fragment current-visible" data-fragment-index="1">
+              <img class="logo" src="img/wrf_sgl_approach1.svg" width="700" align="middle" alt="Old approach #1: machine learning for clinical diagnosis">
+            </div>
+            <div class="fragment current-visible" data-fragment-index="2">
+              <img class="logo" src="img/wrf_sgl_approach1.svg" width="300" align="middle" alt="Old approach #1: machine learning for clinical diagnosis">
+              <img class="logo" src="img/wrf_sgl_approach2.svg" width="700" align="middle" alt="Old approach #2: mass univariate statistics to learn white matter correlates">
+            </div>
+            <div class="fragment" data-fragment-index="3">
+              <div class="row">
+                <div class="two-col" style="align-items: center;">
+                  <img class="logo" src="img/wrf_sgl_approach1.svg" width="300" align="middle" alt="Old approach #1: machine learning for clinical diagnosis">
+                </div>
+                <div class="two-col" style="align-items: center;">
+                  <img class="logo" src="img/wrf_sgl_approach2.svg" width="300" align="middle" alt="Old approach #2: mass univariate statistics to learn white matter correlates">
+                </div>
+              </div>
+              <img class="logo" src="img/wrf_sgl_approach3.svg" width="700" align="middle" alt="Our proposal: make predictions AND discover informative features">
+            </div>
+            <aside class="notes" data-markdown>
+              - Define white matter tractometry in a second
+              - But first, frame landscape of current approaches
+              - Domain agnostic, data science point of view
+              - #1: Machine learning used to predict clinical diagnosis from brain measures
+              - #2: Group comparisons between patients and controls used to understand brain features
+              - Mine: Make predictions and discover informative features
+            </aside>
+    </section>
+
+    <section>
         <h2>Aim 1: Tractometry</h2>
         <h3>The 3D structure of each brain is unique</h3>
         <p>Tracts provide the anatomically correct coordinate frame </p>
@@ -475,7 +504,7 @@
     </section>
 
     <section>
-        <h2> Example: accurately classifies patients/controls</h2>
+        <h2> Example: classify patients/controls</h2>
         <img src="img/als_classification_results.png" height="450px">
         <p>Classification accuracy of 93% (+/- 2%) <br> AUC of 0.978 (+/- 0.006)</p>
         <div class="cite" style="position: absolute; top:620px">
@@ -495,7 +524,7 @@
 
     <section>
             <h2>Aim 2: Statistical analysis</h2>
-            <p class="fragment">Aim 2.1: software for regularized regression in tractometry data</p>
+            <p class="fragment">Aim 2.1: Software for regularized regression in tractometry data</p>
             <p class="fragment">Aim 2.2: Fitting the SGL model to HCP behavioral data</p>
     </section>
 
