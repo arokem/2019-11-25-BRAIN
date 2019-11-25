@@ -224,7 +224,7 @@
         </section> -->
 
 
-	<section>
+	<!-- <section>
 		<h4>Diffusion MRI</h4>
         <img src="img/up-and-down-arrow.png" height=200 style="position: absolute; left: 200px; top: 200px;">
         <img src="img/dmri2.png" height="500">
@@ -245,7 +245,7 @@
                     <br>
                     <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0123272">Rokem et al. (2015), PLoS One</a>
                 </div>
-    </section>
+    </section> -->
 
 
 	<section>
@@ -372,12 +372,12 @@
         <img align="center" src="img/pyafq_segmentation1.gif" height="400">
     </section>
 
-	<section>
+	<!-- <section>
         <h2>Aim 1: Tractometry</h2>
         <h3>The 3D structure of each brain is unique</h3>
         <p><em>Tractometry</em> is <em>feature engineering</em></p>
         <img align="center" src="img/pyafq_segmentation2.gif" height="400">
-	</section>
+	</section> -->
 
     <section>
         <p><em>Tractometry</em> is <em>feature engineering</em></p>
@@ -449,100 +449,33 @@
 
 
     <section>
-
-    </section>
-
-    <section>
         <h2>Aim 2: Statistical analysis of tractometry results</h2>
-        <h3>The dilemma of standard statistical analysis</h3>
-        <p class="fragment">Mass univariate analysis: reduced statistical power</p>
-        <p class="fragment">Focus on a region of interest: lose the full picture</p>
+        <p class="fragment">Current methods focus on univariate analysis</p>
+        <p class="fragment"> &rarr; Develop penalized linear regression for multivariate analysis</p>
     </section>
 
 
     <section>
-        <h2>Solving diffusion MRI as a general linear model</h2>
+        <h2>Diffusion MRI group structure</h2>
         <img src="img/dMRI_group_structure.png" height="500px">
     </section>
 
 
     <section>
-        <h2>Solving diffusion MRI as a general linear model</h2>
+        <h2>Diffusion MRI as a generalized linear model</h2>
         <img src="img/regression_equation.png" width=600><br>
-        <p class="fragment">The objective:</p>
-        <img class="fragment" src="img/ols_penalty.png" width="200px">
 
         <p class="fragment">But in our case p (number of variables) >> n (number of subjects) </p>
 
-        <p class="fragment">Regularization: the Lasso</p>
-        <div class="fragment">
-        <img src="img/lasso_penalty.png" width="400px">
-        <div class="cite">
-            <a href="http://statweb.stanford.edu/~tibs/lasso/lasso.pdf">Tibshirani (1996)</a>
-        </div>
-        </div>
-    </section>
+        <p class="fragment">Take advantage of the group structure with custom-designed sparsity constraints</p>
 
-    <section>
-        <h2>Diffusion MRI data has group structure</h2>
-        <img src="img/dMRI_group_structure.png" height="500px">
-    </section>
-
-    <section>
-        <h2>The Group Lasso</h2>
-        <img src="img/group_lasso_penalty.png" width="600px">
-        <p>Where <em>l</em> are groups of variables </p>
-        <p><em>p(l)</em> is the number of variables in group <em>l</em></p>
-        <p>In our case: all the measurements of a tissue propetry within a tract</p>
-        <p class="fragment">Enforces selection of groups</p>
-        <p class="fragment">But does not enforce L1 sparsity within included groups</p>
-        <div class="cite">
-            <a href="http://www.columbia.edu/~my2550/papers/glasso.final.pdf">Yuan and Lin (2006)</a>
-        </div>
-    </section>
-
-    <section>
-        <h2>Sparse Group Lasso</h2>
-        <img src="img/sparse_group_lasso_penalty.png" width="600px">
-        <p>Enforces sparsity both at the group level and the within-group level</p>
-        <p class="fragment">Subsumes the Lasso (&lambda;<sub>1</sub> = 0)</p>
-        <p class="fragment">And the Group Lasso (&lambda;<sub>2</sub> = 0)</p>
-        <p class="fragment">But more meta-parameters</p>
-        <p class="fragment"> &rarr; Nested cross validation + hyperoptimization</p>
         <div class="cite">
             <a href="https://www.tandfonline.com/doi/abs/10.1080/10618600.2012.681250">Simon et al. (2013)</a>
         </div>
     </section>
 
     <section>
-        <h2>Brain age </h2>
-        <img src="img/age_regression.png" height="500px">
-        <br>
-        MAE: 3.6 years (+/- 2.7 years), R^2=0.3
-        <div class="cite" style="position: absolute; top:620px">
-            <a href="https://github.com/richford/afq-insight-paper">Richie-Halford et al. (in prep)</a>
-        </div>
-    </section>
-
-    <section>
-        <h2>Multiple biological processes</h2>
-        <div style="position: absolute; top:2em; left:6em;">
-        <img src="img/age_coefficients.gif" height="600px">
-        </div>
-        <div class="cite" style="position: absolute; top:620px">
-                <a href="https://github.com/richford/afq-insight-paper">Richie-Halford et al. (in prep)</a>
-        </div>
-    </section>
-
-
-    <section>
-        <h2>Classification: logistic regression</h2>
-        <img src="img/logistic_regression.png" width="600px">
-    </section>
-
-
-    <section>
-        <h2> Accurately classifies patients/controls</h2>
+        <h2> Example: accurately classifies patients/controls</h2>
         <img src="img/als_classification_results.png" height="450px">
         <p>Classification accuracy of 93% (+/- 2%) <br> AUC of 0.978 (+/- 0.006)</p>
         <div class="cite" style="position: absolute; top:620px">
@@ -561,14 +494,6 @@
     </section>
 
     <section>
-    <h2>Sparse Group Lasso</h2>
-        <p class="fragment">Capitalizes on brain structure</p>
-        <p class="fragment">Predicts continuous measures <br> (e.g, "brain age", reading skills)</p>
-        <p class="fragment">Classifies of different states (patient/control)</p>
-        <p class="fragment">Identifies dense or sparse biological feature sets</p>
-    </section>
-
-    <section>
             <h2>Aim 2: Statistical analysis</h2>
             <p class="fragment">Aim 2.1: software for regularized regression in tractometry data</p>
             <p class="fragment">Aim 2.2: Fitting the SGL model to HCP behavioral data</p>
@@ -576,34 +501,6 @@
 
     <section id="afq-browser">
         <h2>Aim 3: Infrastructure for data exploration and integration</h2>
-        <h3>A browser-based tool for visualization and analysis of diffusion MRI data</h3>
-
-		<div style="position: absolute; left:70px; top:250px;">
-			<img src="img/jason.jpg" height="200">
-			<br>
-            <small>Jason Yeatman </small>
-		</div>
-		<div style="position: absolute; left:280px; top:250px;">
-			<img src="img/adam.jpeg" height="200">
-			<br>
-			<small>Adam Richie-Halford </small>
-		</div >
-		<div style="position: absolute; left:490px; top:250px;">
-			<img src="img/josh.png", height="200">
-			<br>
-			<small>Josh Smith </small>
-		</div>
-		<div style="position: absolute; left:705px; top:250px;">
-			<img src="img/anisha.jpg", height="200">
-			<br>
-            <small>Anisha Keshavan</small>
-		</div>
-		<div class="cite" style="position: absolute; left:380px">
-                <a href="https://www.nature.com/articles/s41467-018-03297-7">Yeatman, Richie-Halford, Smith, Keshavan & Rokem (2018), Nature Communications</a>
-            </div>
-    </section>
-
-	<section>
 		<h3>A browser-based tool for visualization and analysis of diffusion MRI data</h3>
         <p class="fragment">A web-based application</p>
         <p class="fragment">Leverages modern visualization frameworks</p>
@@ -627,54 +524,6 @@
         </div>
 
 	</section>
-
-    <section>
-		<h2> Exploratory data analysis</h2>
-
-		<p class="fragment">Enhances published results<p>
-		<p class="fragment">Linked visualizations facilitate easy exploration</p>
-		<p class="fragment">Enables new discoveries in old datasets</p>
-
-		<div class="cite" style="position: absolute; left:380px">
-            <a href="https://www.nature.com/articles/s41467-018-03297-7">Yeatman, Richie-Halford, Smith, Keshavan & Rokem (2018), Nature Communications</a>
-        </div>
-	</section>
-
-	<section>
-		<h2>Automatic data sharing</h2>
-
-		<img src="./img/afq-browser-static.png" height="400px">
-
-		<svg class="fragment" data-fragment-index="1" width="400" height="110"  style="position: absolute; left:435px; top:435px;">
-			<rect rx="10" ry="10" width="150" height="60" style="fill:yellow;stroke-width:3;stroke:rgb(1,0,0);opacity:0.4;" />
-		</svg>
-
-		<svg class="fragment" data-fragment-index="3" width="400" height="110"  style="position: absolute; left:722px; top:145px;">
-			<rect rx="10" ry="10" width="100" height="60" style="fill:yellow;stroke-width:3;stroke:rgb(1,0,0);opacity:0.4;" />
-        </svg>
-        <p class="fragment" data-fragment-index="2" style="position: absolute; top:500px; left:400px;">
-        <a href="http://afqvault.org">http://afqvault.org</a>
-        </p>
-		<div class="cite" style="position: absolute; left:380px">
-                <a href="https://www.nature.com/articles/s41467-018-03297-7">Yeatman, Richie-Halford, Smith, Keshavan & Rokem (2018), Nature Communications</a>
-        </div>
-
-	</section>
-
-
-	<section>
-		<h2>Further exploration</h2>
-
-		<video width="800" autoplay loop>
-			<source src="./img/afq-browser-binder-demo.mp4">
-		</video>
-
-		<div class="cite" style="position: absolute; left:380px">
-            <a href="https://www.nature.com/articles/s41467-018-03297-7">Yeatman, Richie-Halford, Smith, Keshavan & Rokem (2018), Nature Communications</a>
-        </div>
-
-	</section>
-
 
     <section>
             <h2>Aim 3: Exploratory data analysis of the HCP dMRI benchmark and atlas</h2>
